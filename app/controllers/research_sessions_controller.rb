@@ -14,8 +14,9 @@ class ResearchSessionsController < ApplicationController
   end
 
   def create
-    session_id = ResearchSession.create.id
-    redirect_to(first_question_path(session_id))
+    session = ResearchSession.create
+    session.researchers.build
+    redirect_to(first_question_path(session.id))
   end
 
   def show
