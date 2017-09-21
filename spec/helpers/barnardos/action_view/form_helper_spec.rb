@@ -18,8 +18,8 @@ RSpec.describe Barnardos::ActionView::FormHelper, type: :helper do
       # through an expectation, which will create the errors on which we rely.
 
       let!(:session) do
-        ResearchSession.create.tap do |session|
-          session.status = :researcher
+        create(:research_session, :step_topic).tap do |session|
+          session.topic = nil
           expect(session.valid?).to be false
           assign(:research_session, session)
         end
@@ -35,7 +35,7 @@ RSpec.describe Barnardos::ActionView::FormHelper, type: :helper do
       it 'does not render the rails default error div around fields' do
         with_stub_routing do
           rendered = helper.barnardos_form_with model: session do |form|
-            form.labelled_text_field :researcher_name
+            form.labelled_text_field :topic
           end
 
           expect(rendered).not_to have_tag('div.field_with_errors')
