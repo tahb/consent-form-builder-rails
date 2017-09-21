@@ -85,7 +85,7 @@ module Barnardos
         end
       end
 
-      def radio_group_vertical(object, method, collection, legend: nil, legend_options: {})
+      def radio_group_vertical(object, method, collection, options = {}, legend: nil, legend_options: {})
         wrapper_tag object, method, tag: :fieldset, class: 'radio-group radio-group__vertical' do
           next unless collection.any?
 
@@ -115,7 +115,7 @@ module Barnardos
         end
       end
 
-      def checkbox_group_vertical(object_name, method, collection, legend: nil, legend_options: {})
+      def checkbox_group_vertical(object_name, method, collection, options = {}, legend: nil, legend_options: {})
         wrapper_tag(
           object_name, method,
           tag: :fieldset, class: 'checkbox-group checkbox-group__vertical'

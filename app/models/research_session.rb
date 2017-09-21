@@ -1,5 +1,6 @@
 class ResearchSession < ApplicationRecord
   has_many :researchers
+  accepts_nested_attributes_for :researchers
 
   validates :researchers, presence: true,
     if: -> (session) { session.reached_step?(:researcher) }

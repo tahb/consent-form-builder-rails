@@ -5,8 +5,8 @@ class ResearchSession
     include Singleton
 
     PARAMS = ActiveSupport::OrderedHash[{
-      researcher:    [:researcher_name, :researcher_phone, :researcher_email,
-                      :researcher_other, :researcher_other_name, :researcher_other_name],
+      researcher:    [researchers_attributes:
+        [:researcher_name, :researcher_phone, :researcher_email]],
       topic:         [:topic],
       purpose:       [:purpose],
       methodologies: [:other_methodology, methodologies: []],

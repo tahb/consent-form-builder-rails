@@ -15,12 +15,14 @@ class ResearchSessionsController < ApplicationController
 
   def create
     session = ResearchSession.create
-    session.researchers.build
     redirect_to(first_question_path(session.id))
   end
 
   def show
     @research_session = current_research_session
+    if (step == :researcher) && @research_session.researchers.none?
+      @research_session.researchers.build
+    end
     render_wizard
   end
 
@@ -39,6 +41,7 @@ class ResearchSessionsController < ApplicationController
     @research_session = current_research_session
     @research_session.status = step
     @research_session.assign_attributes(question_params)
+    @research_session.save!
     render_wizard @research_session
   end
 
