@@ -10,11 +10,11 @@
   </p>
 
   <%= barnardos_form_with model: @research_session, url: wizard_path do |form| %>
-    <%= form.fields_for :researchers do |research_form| %>
+    <%= form.fields_for :researchers do |research_fields| %>
       <fieldset class="fieldset">
-        <%= research_form.labelled_text_field :researcher_name %>
-        <%= research_form.labelled_text_field :researcher_phone %>
-        <%= research_form.labelled_text_field :researcher_email %>
+        <%= research_fields.labelled_text_field :researcher_name %>
+        <%= research_fields.labelled_text_field :researcher_phone %>
+        <%= research_fields.labelled_text_field :researcher_email %>
       </fieldset>
     <% end %>
 
