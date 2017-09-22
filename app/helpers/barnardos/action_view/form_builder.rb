@@ -2,17 +2,21 @@ module Barnardos
   module ActionView
     class FormBuilder < ::ActionView::Helpers::FormBuilder
       def labelled_text_field(method, text = nil, text_options: {}, label_options: {}, &block)
+        text_options = objectify_options(text_options)
+        text_options.delete(:skip_default_ids)
         @template.labelled_text_field(
           @object_name, method, text,
-          text_options: objectify_options(text_options),
+          text_options: text_options,
           label_options: label_options, &block
         )
       end
 
       def labelled_text_area(method, label: nil, label_options: {}, text_options: {})
+        text_options = objectify_options(text_options)
+        text_options.delete(:skip_default_ids)
         @template.labelled_text_area(
           @object_name, method, label: label,
-          label_options: label_options, text_options: objectify_options(text_options)
+          label_options: label_options, text_options: text_options
         )
       end
 
