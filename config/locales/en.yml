@@ -53,6 +53,14 @@ en:
       researcher_name: 'Full name'
       researcher_phone: 'Telephone number (optional)'
       researcher_email: 'Email'
+      one:
+        researcher_name: 'Full name'
+        researcher_phone: 'Telephone number (optional)'
+        researcher_email: 'Email'
+      other:
+        researcher_name: 'Full name'
+        researcher_phone: 'Telephone number (optional)'
+        researcher_email: 'Email'
 
   activerecord:
     attributes:
