@@ -49,24 +49,20 @@ en:
     food_provided: "Will you provide food or refreshments at the session? (optional)"
     incentive: "Will an incentive be provided?"
     payment_type: "What form will the incentive take?"
-  researcher_attr_labels: &researcher_attr_labels
-    researcher_name: 'Full name'
-    researcher_phone: 'Telephone number (optional)'
-    researcher_email: 'Email'
+    researchers:
+      researcher_name: 'Full name'
+      researcher_phone: 'Telephone number (optional)'
+      researcher_email: 'Email'
 
   activerecord:
     attributes:
       research_session:
         *research_session_attr_labels
-      "research_session[researchers]":
-        *researcher_attr_labels
 
   helpers:
     label:
       research_session:
         *research_session_attr_labels
-      "research_session[researchers]":
-        *researcher_attr_labels
 
   errors:
     format: '"%{attribute}" %{message}'
