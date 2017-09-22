@@ -16,19 +16,21 @@ module Barnardos
         text_options.delete(:skip_default_ids)
         @template.labelled_text_area(
           @object_name, method, label: label,
-          label_options: label_options, text_options: text_options
+                                label_options: label_options, text_options: text_options
         )
       end
 
-      def radio_group_vertical(method, collection, options = {}, legend: nil, legend_options: {})
+      def radio_group_vertical(method, collection, legend: nil, legend_options: {})
         @template.radio_group_vertical(
-          @object_name, method, collection, objectify_options(options), legend: legend, legend_options: legend_options
+          @object_name, method, collection,
+          legend: legend, legend_options: legend_options
         )
       end
 
-      def checkbox_group_vertical(method, collection, options = {}, legend: nil, legend_options: {})
+      def checkbox_group_vertical(method, collection, legend: nil, legend_options: {})
         @template.checkbox_group_vertical(
-          @object_name, method, collection, objectify_options(options), legend: legend, legend_options: legend_options
+          @object_name, method, collection,
+          legend: legend, legend_options: legend_options
         )
       end
     end

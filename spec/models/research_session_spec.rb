@@ -71,8 +71,8 @@ RSpec.describe ResearchSession, type: :model do
 
           it { is_expected.not_to be_valid }
           it 'errors on the nested researcher attributes' do
-            expect(session.errors['researchers.researcher_name'].first).to match /can't be blank/
-            expect(session.errors['researchers.researcher_email'].first).to match /is invalid/
+            expect(session.errors['researchers.researcher_name'].first).to match(/can't be blank/)
+            expect(session.errors['researchers.researcher_email'].first).to match(/is invalid/)
           end
         end
       end

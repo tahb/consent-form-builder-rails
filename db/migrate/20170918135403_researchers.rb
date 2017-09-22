@@ -12,6 +12,5 @@ class Researchers < ActiveRecord::Migration[5.1]
       t.string :researcher_email
       t.belongs_to :research_session, index: true
     end
-
   end
 end
