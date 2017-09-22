@@ -41,7 +41,7 @@ class ResearchSessionsController < ApplicationController
     @research_session = current_research_session
     @research_session.status = step
     @research_session.assign_attributes(question_params)
-    @research_session.save!
+    @research_session.save
     render_wizard @research_session
   end
 
