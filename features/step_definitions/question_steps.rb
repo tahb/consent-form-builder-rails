@@ -2,15 +2,10 @@ When(/^I provide full session details for a child-age cohort$/) do
   visit '/'
   click_button 'Create new form'
 
-  within '[name="first-researcher"]' do
-    fill_in 'Full name', with: 'Rachel Researcher'
-    fill_in 'Telephone number', with: '012345678'
-    fill_in 'Email', with: 'rachel@researcher.com'
-  end
+  fill_in 'Full name', with: 'Rachel Researcher'
+  fill_in 'Telephone number', with: '012345678'
+  fill_in 'Email', with: 'rachel@researcher.com'
 
-  within '[name="second-researcher"]' do
-    fill_in 'Full name', with: 'Steve Secondresearcher'
-  end
   click_button 'Continue'
 
   @topic = <<~TEXT_WITH_DOUBLE_AND_SINGLE_LINEBREAK
@@ -83,15 +78,10 @@ Given(/^I have arrived at the methodologies step$/) do
   visit '/'
   click_button 'Create new form'
 
-  within '[name="first-researcher"]' do
-    fill_in 'Full name', with: 'Rachel Researcher'
-    fill_in 'Telephone number', with: '012345678'
-    fill_in 'Email', with: 'rachel@researcher.com'
-  end
+  fill_in 'Full name', with: 'Rachel Researcher'
+  fill_in 'Telephone number', with: '012345678'
+  fill_in 'Email', with: 'rachel@researcher.com'
 
-  within '[name="second-researcher"]' do
-    fill_in 'Full name', with: 'Steve Secondresearcher'
-  end
   click_button 'Continue'
 
   @topic = <<~TEXT_WITH_DOUBLE_AND_SINGLE_LINEBREAK
