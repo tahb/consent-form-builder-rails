@@ -61,21 +61,21 @@ RSpec.describe Barnardos::ActionView::FormHelper, type: :helper do
     let(:label_options) { {} }
 
     subject(:rendered) do
-      helper.labelled_text_field :research_session, :researcher_name, label_options: label_options
+      helper.labelled_text_field :research_session, :topic, label_options: label_options
     end
 
     context 'there is a value on research session' do
       before do
-        research_session = double('ResearchSession', researcher_name: 'Alice', errors: {})
+        research_session = double('ResearchSession', topic: 'Atopic', errors: {})
         assign(:research_session, research_session)
       end
 
       it 'labels using the i18n value from helpers in en.yml' do
-        expect(rendered).to have_tag('label', text: 'Full name')
+        expect(rendered).to have_tag('label', text: /What is the research/)
       end
 
       it 'gets the value from the model' do
-        expect(rendered).to have_tag('input[value=Alice]')
+        expect(rendered).to have_tag('input[value=Atopic]')
       end
     end
 
@@ -101,8 +101,8 @@ RSpec.describe Barnardos::ActionView::FormHelper, type: :helper do
       before do
         session = double(
           'ResearchSession',
-          researcher_name: 'Fred',
-          errors: { researcher_name: ["Can't be blank"] }
+          topic: '',
+          errors: { topic: ["Can't be blank"] }
         )
         assign(:research_session, session)
       end

@@ -40,7 +40,15 @@ class ResearchSession
               params_to_steps[param] = step
             when Hash
               param.keys.each do |array_param|
-                params_to_steps[array_param] = step
+                nested_params = param[array_param]
+                if nested_params.any?
+                  # Only checks one level of nesting. If you find yourself passing
+                  # a doubly-nested thing hash or deeper here this will need
+                  # revisiting
+                  nested_params.each { |nested_param| params_to_steps[nested_param] = step }
+                else
+                  params_to_steps[array_param] = step
+                end
               end
             end
           end

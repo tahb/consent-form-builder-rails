@@ -70,12 +70,9 @@ RSpec.describe ResearchSession, type: :model do
           end
 
           it { is_expected.not_to be_valid }
-          it 'has a rollup error for researchers' do
-            expect(session.errors[:researchers]&.first).to match(/is invalid/)
-          end
-          it 'has further errors on the individual researcher attributes' do
-            expect(session.researchers.first.errors[:researcher_name].length).to eql(1)
-            expect(session.researchers.first.errors[:researcher_email].length).to eql(1)
+          it 'errors on the nested researcher attributes' do
+            expect(session.errors['researchers.researcher_name'].first).to match /can't be blank/
+            expect(session.errors['researchers.researcher_email'].first).to match /is invalid/
           end
         end
       end
