@@ -15,29 +15,28 @@ how to get the application running and how to make and submit changes.
 The consent form service is built on Ruby on Rails 5 and uses Sass as a CSS preprocessor and 
 Webpack/Babel/Yarn to handle client side javascript transpilation and dependency management.
 
-Data is stored in Postgresl.
+Data is stored in Postgresql.
 
 The service comes with configuration files to allow it to be deployed to Heroku or any Docker container
 service.
 
 ### Installation
 
-There are 2 ways in which you can install the service, either natively on your machine or 
+There are two ways in which you can install the service, either natively on your machine or 
 using [Docker](https://www.docker.com/). The easiest way to get started is to use Docker as it takes care of all the
-installation steps for you, you simply have to install docker, checkout the source and 
+installation steps for you: install Docker, checkout the source and 
 tell it to start.
 
-If you do not wish to use docker, but instead want to use run natively on your machine then 
-this is possible, it just takes a few more steps.
+If you do not wish to use Docker, but want to make the app run natively on your machine, it just takes a few more steps. See Native Installation below.
 
 ### Docker installation
 
 #### Requirements
-* A computer with an OS that can run docker
+* A computer that can run Docker
 * Docker
 
 #### Steps
-* If you haven't already, install docker. For Windows install [Docker for Windows](https://www.docker.com/docker-windows)
+* If you haven't already, install Docker. For Windows install [Docker for Windows](https://www.docker.com/docker-windows)
 For mac install [Docker for Mac](https://www.docker.com/docker-mac) and for Ubuntu [Install via package manager](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/#uninstall-old-versions). Additionally for 
 Ubuntu you should install [Docker Compose](https://docs.docker.com/compose/install/#install-compose).
 * Checkout the repo via git `git@github.com:barnardos/consent-form-builder-rails.git` or 
@@ -49,7 +48,7 @@ you should see a message saying the server started and is listening on port 3000
 * Goto [http://localhost:3000](http://localhost:3000).
 
 #### Development with Docker
-Docker Compose Docker mounts your local source folders into the Docker containers, this
+Docker mounts your local source folders into the Docker containers, this
 means when you make any changes to the source locally, they will show up on the site. In addition to
 this the Docker version also runs Webpacker in watch mode, so any changes made to Javascript are instantly 
 compiled.
