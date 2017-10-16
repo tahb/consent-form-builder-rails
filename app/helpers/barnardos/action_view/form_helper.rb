@@ -36,7 +36,8 @@ module Barnardos
         ) do
           label_options = label_options.merge(class: "textfield__label #{label_options[:class]}")
           text_options = text_options.merge(
-            class: "textfield__input js-highlight-control__input #{text_options[:class]}"
+            class: "textfield__input js-highlight-control__input #{text_options[:class]}",
+            autofocus: text_options[:autofocus]
           )
 
           concat(label(object_name, method, text, label_options, &block))
@@ -59,8 +60,10 @@ module Barnardos
       # </div>
       def labelled_text_area(object_name, method, label: nil,
                              label_options: {}, text_options: {})
-        text_options[:class] =
-          "#{(text_options[:class] || '')} textarea__input js-highlight-control__input"
+        text_options = text_options.merge(
+          class: "#{(text_options[:class] || '')} textarea__input js-highlight-control__input",
+          autofocus: text_options[:autofocus]
+        )
         label_options[:class] = (label_options[:class] || '') + ' textarea__label'
 
         wrapper_tag(object_name, method, class: 'textarea js-highlight-control') do
