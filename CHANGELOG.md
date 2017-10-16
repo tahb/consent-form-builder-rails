@@ -9,6 +9,7 @@
 * [BUG] - [IE11 shows two arrows on the print area select field](https://trello.com/c/Y55ixqL5/206-ie11-shows-two-arrows-on-the-print-area-select-field)
 * [BUG] - [some page furniture obscuring printed preview](https://trello.com/c/1EKgH3tL/188-2-bug-some-page-furniture-obscuring-printed-preview)
 * [FEATURE] - [Add Location (or service information) to the research session screen](https://trello.com/c/yzOexm0b/175-3-add-location-or-service-information-to-the-research-session-screen)
+* [FEATURE] - [Change the date time form fields to not use `form.datetime_select`](https://trello.com/c/91fUZw28/189-3-change-the-date-time-form-fields-to-not-use-formdatetimeselect)
 
 # 0.2.0 / 2017-10-04
 
